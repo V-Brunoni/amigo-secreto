@@ -36,6 +36,8 @@ function embaralha(lista){
 }
 
 function reiniciar(){
-
+    amigos = [];
+    document.getElementById('lista-amigos').innerHTML = '';
+    document.getElementById('lista-sorteio').innerHTML = '';
 
 }

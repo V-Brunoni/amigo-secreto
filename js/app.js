@@ -6,6 +6,10 @@ function adicionar(){
         alert('Informe o nome do amigo!');
         return;
     }
+    if (amigos.includes(nomeAmigo.value)) {
+        alert('Nome já adicionado!!!');
+        return;
+    }
 
     let listaAmigos = document.getElementById('lista-amigos');
 

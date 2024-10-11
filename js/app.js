@@ -2,6 +2,11 @@ let amigos = [];
 
 function adicionar(){
     let nomeAmigo = document.getElementById('nome-amigo');
+    if (nomeAmigo.value == '') {
+        alert('Informe o nome do amigo!');
+        return;
+    }
+
     let listaAmigos = document.getElementById('lista-amigos');
 
     amigos.push(nomeAmigo.value);
@@ -18,7 +23,7 @@ function adicionar(){
     atualizarSorteio();
 }
 
-function sortear(){
+function sortear(){ 
     embaralhar(amigos);
     let listaSorteio = document.getElementById('lista-sorteio');
 
@@ -38,10 +43,10 @@ function excluirAmigo(index) {
     atualizarSorteio();
 }
 
-function embaralhar(lista) {
-    for (let indice = lista.length; indice; indice--) {
+function embaralhar(listaAmigos) {
+    for (let indice = listaAmigos.length; indice; indice--) {
         const indiceAleatorio = Math.floor(Math.random() * indice);
-        [lista[indice - 1], lista[indiceAleatorio]] = [lista[indiceAleatorio], lista[indice - 1]];
+        [listaAmigos[indice - 1], listaAmigos[indiceAleatorio]] = [listaAmigos[indiceAleatorio], listaAmigos[indice - 1]];
     }
 }
 
@@ -65,7 +70,7 @@ function atualizarLista() {
         });
 
         // Adiciona o parágrafo à lista
-        lista.appendChild(paragrafo);
+        listaAmigos.appendChild(paragrafo);
     }
 }
 
